@@ -259,7 +259,7 @@ mlx_lm.convert --hf-path upstage/SOLAR-10.7B-Instruct-v1.0 \
 `meta-llama/Llama-2-13b-chat-hf` works out-of-the-box with MLX.
 
 ##### Vicuna-13b
-I convert `lmsys/vicuna-13b-v1.5` to the MLX format using the `mlx-lm.convert` CLI tool. Note that the [HF repository](https://huggingface.co/lmsys/vicuna-13b-v1.5) does not contain safetensors, so one needs to use a PR branch that adds safetensors support, such as [this one](https://huggingface.co/lmsys/vicuna-13b-v1.5/discussions/10/files).
+I convert `lmsys/vicuna-13b-v1.5` to the MLX format before use. Note that the [HF repository](https://huggingface.co/lmsys/vicuna-13b-v1.5) does not contain safetensors, so one needs to use a PR branch that adds safetensors support, such as [this one](https://huggingface.co/lmsys/vicuna-13b-v1.5/discussions/10/files).
 
 The `revision` argument is not available in the CLI tool, so one needs to use the Python API:
 
@@ -277,11 +277,18 @@ convert(
 The `mlx-community/mixstral-8x7b-instruct` model is already converted and available on Hugging Face.
 
 ##### WizardLM-13b
-I convert `lmsys/vicuna-13b-v1.5` to the MLX format using the `mlx-lm.convert` CLI tool. Similarly, to the `lmsys/vicuna-13b-v1.5` model, one needs to use a PR branch that adds safetensors support, such as [this one](https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/discussions/28/files).
+I convert `lmsys/vicuna-13b-v1.5` to the MLX format before use. Similarly, to the `lmsys/vicuna-13b-v1.5` model, one needs to use a PR branch that adds safetensors support, such as [this one](https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/discussions/28/files).
 
-```bash
-mlx_lm.convert --hf-path lmsys/vicuna-13b-v1.5 \
-    --mlx-path mlx_models/lmsys@vicuna-13b-v1.5
+The `revision` argument is not available in the CLI tool, so one needs to use the Python API:
+
+```python
+from mlx_lm import convert
+
+convert(
+    hf_path="WizardLMTeam/WizardLM-13B-V1.2",
+    mlx_path="mlx_models/WizardLMTeam@WizardLM-13B-V1.2",
+    revision="refs/pr/28"
+)
 ```
 
 #### Custom Batching Logic
