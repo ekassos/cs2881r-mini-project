@@ -11,7 +11,7 @@ The attacks succeed across all three providers, with many outputs closely matchi
 
 By analyzing reasoning summaries, traces of situational awareness and alignment constraints emerge, including copyright protection. The results highlight the potential contrasting influences of token budget pressure and increased reasoning capabilities on model alignment.
 
-For more details, refer to the [writeup](https://github.com/ekassos/cs2881r_mini_project/tree/main/results/writeup.md).
+For more details, refer to the [writeup](https://github.com/ekassos/cs2881r-mini-project/tree/main/results/writeup.md).
 
 ## Project Structure
 
