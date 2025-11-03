@@ -1,0 +1,42 @@
+[project]
+name = "cs2881r-mini-project"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Evangelos Kassos",email = "github@evangeloskassos.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "tqdm (>=4.67.1,<5.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "bm25s[core] (>=0.2.14,<0.3.0)",
+    "huggingface-hub (>=0.34.0,<0.35.0)",
+    "datasets (>=4.3.0,<5.0.0)",
+    "transformers[sentencepiece] (>=4.57.1,<5.0.0)",
+    "torch (>=2.9.0,<3.0.0)",
+    "mlx-lm (>=0.28.3,<0.29.0)",
+    "safetensors (>=0.6.2,<0.7.0)",
+    "fastchat (>=0.1.0,<0.2.0)",
+    "psutil (>=7.1.2,<8.0.0)",
+    "accelerate (>=1.11.0,<2.0.0)",
+    "openai (>=2.6.1,<3.0.0)",
+    "google-genai (>=1.47.0,<2.0.0)",
+    "anthropic (>=0.72.0,<0.73.0)",
+    "evaluate (>=0.4.6,<0.5.0)",
+    "numpy (>=2.3.4,<3.0.0)",
+    "nltk (>=3.9.2,<4.0.0)",
+    "bert-score (>=0.3.13,<0.4.0)",
+    "rouge-score (>=0.1.2,<0.2.0)",
+    "sacrebleu (>=2.5.1,<3.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "cs2881r_mini_project", from = "src"}]
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

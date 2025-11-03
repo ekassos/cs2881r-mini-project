@@ -1,0 +1,13 @@
+bm25s_indices/
+data/
+mlx_models/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
